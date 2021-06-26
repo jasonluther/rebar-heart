@@ -1,0 +1,11 @@
+[Unit]
+Description=Turn off the heart at night
+Requires=heart-all-off.service
+
+[Timer]
+Unit=heart-all-off.service
+AccuracySec=1s
+OnCalendar=*-*-* 22:00:00
+
+[Install]
+WantedBy=timers.target

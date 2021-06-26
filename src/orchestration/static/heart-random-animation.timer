@@ -1,0 +1,9 @@
+[Unit]
+Description=Turn on the heart
+
+[Timer]
+AccuracySec=1s
+OnCalendar=*-*-* 08:40:00
+
+[Install]
+WantedBy=timers.target

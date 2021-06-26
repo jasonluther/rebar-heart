@@ -1,0 +1,8 @@
+#!/bin/bash
+python3 make-systemd-files.py
+sudo cp -fv ./tmp/*.service ./static/*.timer /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable heart-all-off.timer
+sudo systemctl start heart-all-off.timer
+sudo systemctl enable heart-random-animation.timer
+sudo systemctl start heart-random-animation.timer

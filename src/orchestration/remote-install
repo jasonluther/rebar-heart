@@ -1,0 +1,3 @@
+#!/bin/sh
+rsync -avz --progress ~/git/rebar-heart pi@heart.local:
+ssh pi@heart.local "cd rebar-heart/src/orchestration; ./install-systemd-files"
