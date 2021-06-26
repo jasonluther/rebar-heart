@@ -217,7 +217,7 @@ These are all of the tools and materials I used for this project.
 
 If you're considering welding or metalworking as a hobby, don't be intimidated! Cheap equipment is good enough for hobby projects, and you can get welding supplies locally and online, including gas to TIG or MIG weld. 
 
-Note: _Links are available for convenience and don't reflect a recommendation or endorsement of any product, unless noted. None of the links are affiliate links or sponsored in any way. The links are to the actual products I have used, or a similar replacement for items that are no longer available._
+Note: _Links are available for convenience and don't reflect a recommendation or endorsement of any product, unless noted. None of the links are affiliate links or sponsored in any way. The links are to the actual products I have used or to a similar replacement for discontinued items._
 
 Materials:
 * Steel
