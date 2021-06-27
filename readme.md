@@ -33,16 +33,12 @@ I started with modeling clay to get a sense of the basic shape I wanted and used
 Then I made a slightly larger mockup with bamboo skewers and hot glue to validate the shape. 
 
 ![measuring the model](img/04-model-measurements.jpeg)
-![bamboo mockup](img/05-bamboo-side.jpeg)
-![bamboo mockup](img/06-bamboo-full-outline.jpeg)
 ![bamboo mockup](img/07-bamboo-front.jpeg)
 ![bamboo mockup](img/08-bamboo-side-1.jpeg)
-![bamboo mockup](img/09-bamboo-side-1-detail.jpeg)
 
 Once I was happy with the mock-up, I measured each segment with digital calipers to determine the length of the perimeter and guide the fabrication process. 
 
 ![measurement drawing](img/10-measurement-detail.jpeg)
-![measurement of bamboo mockup](img/11-bamboo-measurement.jpeg)
 ![measuring with calipers](img/12-bamboo-measurement-height.jpeg)
 
 The last big decision to make was the overall size. Aiming for something in the 30-36" range, I chose the final dimensions by scaling the perimeter of the mockup to 10 feet, which is about the length of one piece of rebar stock. With that ratio, I scaled the rest of the caliper measurements to the steel dimensions in a spreadsheet. 
@@ -67,7 +63,6 @@ I dove right into fabrication, starting with the perimeter.
 I marked the width and height on my work table, cut and laid out pieces for one half, and welded them together. Then I assembled the second half alongside the first to achieve rough symmetry. Finally, I joined the two halves. 
 
 ![rebar pieces](img/13-rebar-outline-cut.jpeg)
-![tack welds](img/14-rebar-outline-tack.jpeg)
 ![welding progress](img/15-rebar-full-outline.jpeg)
 ![welding progress](img/16-rebar-outline-other-side.jpeg)
 ![welding progress](img/17-rebar-outline-full.jpeg)
@@ -83,17 +78,13 @@ The process for each piece of rebar is the same:
 6. Tack weld into place. Adjust the position as needed. 
 
 ![welding progress](img/18-welding-wire-jig.jpeg)
-![welding progress](img/19-welding-progress.jpeg)
-![welding progress](img/20-welding-overview.jpeg)
 ![welding progress](img/21-block-to-raise-rebar.jpeg)
 ![welding progress](img/22-one-side.jpeg)
 
 After tacking everything, I went back and filled in all of the welds fully, sometimes with multiple passes to build up the weld in really large gaps. 
 
-![welding detail](img/24-welding-detail-0.jpeg)
 ![welding detail](img/25-welding-detail-1.jpeg)
 ![grinding](img/26-grinding-1.jpeg)
-![grinding](img/27-grinding.jpeg)
 
 I chipped off and cleaned up the slag with a wire brush and then ground off the ugly bits with a flap disc. 
 
@@ -109,17 +100,15 @@ After applying two coats of rusty metal spray primer, I used a combination of re
 
 Then I applied a few coats of clear satin finish to protect the paint and remove some of the gloss. 
 
-![primer](img/28-primer-applied.jpeg)
 ![primer](img/29-primer.jpeg)
 ![spray paint](img/30-paint-3.jpeg)
-![spray paint](img/31-paint-2.jpeg)
 ![spray paint](img/32-paint-1.jpeg)
 
 ## Lighting
 
 I considered several lighting options: spot lights pointed at it, light bulbs hanging inside, a white neon-like LED strip, simple string lights, and more. 
 
-I ultimately chose a thin weatherproof Adafruit NeoPixel strip installed around the inside perimeter. 
+I ultimately chose a thin weatherproof [Adafruit NeoPixel strip](https://www.adafruit.com/product/2964?length=1) installed around the inside perimeter. 
 
 ![LED strip test](img/33-strip-test.jpeg)
 
@@ -167,7 +156,7 @@ I am happy with the cost vs. reliability of this setup, given how I'm using it, 
 
 ## Programming
 
-There are endless ways to create lighting animations, and I'll make the code I used available, so here are just a few things to consider. 
+There are countless ways to create lighting animations, and I'll make the code I used available, so here are just a few things to consider. 
 
 ### Power Management
 
@@ -179,7 +168,7 @@ You don't need to worry about the low-level details of driving LEDs because Adaf
 
 ### Color: RGB and HSV
 
-Each "pixel" is formed by a red, green, and blue LED, with each color set to a value from 0-255. While this "RGB" color scheme is simple, many operations are easier with the HSV color model, which uses floating point values from 0-1 for hue, saturation, and value. For example, the Value (V) determines the brightness of a pixel, so you can dim a given color just by changing the Value. With RGB, you'd have to adjust all 3 colors.  This makes some animations much simpler, like a trail of LEDs where one end fades away. I used the Adafruit [FancyLED library](https://learn.adafruit.com/fancyled-library-for-circuitpython/overview) to handle HSV to RGB conversion.
+Each "pixel" is formed by a red, green, and blue LED, with each color set to a value from 0-255. While this RGB color scheme is simple, many operations are easier with the HSV color model, which uses floating point values from 0-1 for hue, saturation, and value. For example, the Value (V) determines the brightness of a pixel, so you can dim a given color just by changing the Value. With RGB, you'd have to adjust all 3 colors.  This makes some animations much simpler, like a trail of LEDs where one end fades away. I used the Adafruit [FancyLED library](https://learn.adafruit.com/fancyled-library-for-circuitpython/overview) to handle HSV to RGB conversion.
 
 This Adafruit guide has a great explanation of more things you can do to improve the display of LEDs for human vision: <https://learn.adafruit.com/led-tricks-gamma-correction>. 
 
@@ -227,6 +216,7 @@ Materials:
   * Spray paint, clear coat (Minwax Polycrylic)
   * 3-in-1 oil
 * Electronics
+  * [NeoPixel LED strip](https://www.adafruit.com/product/2964?length=1)
   * [Raspberry Pi Zero W](https://www.adafruit.com/product/3708)
   * [SD card](https://www.adafruit.com/product/2820)
   * [Sparkfun Level Shifter](https://www.sparkfun.com/products/12009)
