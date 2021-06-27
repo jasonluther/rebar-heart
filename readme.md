@@ -28,7 +28,6 @@ I started with modeling clay to get a sense of the basic shape I wanted and used
 
 ![basic clay shape](img/01-clay-shape.jpeg)
 ![aluminum wire frame](img/02-clay-wire.jpeg)
-![aluminum wire mockup](img/03-clay-wire-2.jpeg)
 
 Then I made a slightly larger mockup with bamboo skewers and hot glue to validate the shape. 
 
