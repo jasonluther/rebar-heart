@@ -18,7 +18,7 @@ WantedBy=multi-user.target
 ''')
 
 installdir = "/home/pi/rebar-heart"
-animations = ["heartbeat", "pendulum", "rainbow", "twinkle", "all-off", "random-animation"]
+animations = ["heartbeat", "heartbeat-orange", "pendulum", "pendulum-orange", "rainbow", "twinkle", "all-off", "random-animation"]
 conflicts = " ".join(f'heart-{i}.service' for i in animations)
 
 for a in animations:
