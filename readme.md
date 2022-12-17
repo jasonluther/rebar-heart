@@ -181,7 +181,7 @@ To start your animation program automatically when the Pi boots, create a `.serv
 
 ### Code
 
-The code for my heart is available on [GitHub](https://github.com/jasonluther/rebar-heart/src). 
+The code for my heart is available on [GitHub](https://github.com/jasonluther/rebar-heart/tree/master/src). 
 
 The basic framework of each animation is to update the array of pixel values, call `pixels.show()`, wait some time with `time.sleep(...)`, and repeat. 
 
