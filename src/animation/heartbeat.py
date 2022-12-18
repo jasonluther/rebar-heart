@@ -22,6 +22,9 @@ pixels = neopixel.NeoPixel(
 pixels.fill(0)
 pixels.show()
 
+pixel_rgb_red = 255
+pixel_rgb_green = 0
+pixel_rgb_blue = 0
 
 def normal_index(i):
     return i % num_pixels
@@ -68,8 +71,8 @@ while True:
             brightness = 1 - (p / width_p)
             index_up = normal_index(start_pixel + p)
             index_down = normal_index(start_pixel - p)
-            pixels[index_up] = (round(255 * brightness), 0, 0)
-            pixels[index_down] = (round(255 * brightness), 0, 0)
+            pixels[index_up] = (round(pixel_rgb_red * brightness), round(pixel_rgb_green * brightness), round(pixel_rgb_blue * brightness))
+            pixels[index_down] = (round(pixel_rgb_red * brightness), round(pixel_rgb_green * brightness), round(pixel_rgb_blue * brightness))
 
         if (current_time_delta > in_beat_time):
             start_time = time.clock_gettime(time.CLOCK_BOOTTIME)
@@ -89,8 +92,8 @@ while True:
             brightness = abs(brightness * (1-pct_time))
             index_up = normal_index(start_pixel + p)
             index_down = normal_index(start_pixel - p)
-            pixels[index_up] = (round(255 * brightness), 0, 0)
-            pixels[index_down] = (round(255 * brightness), 0, 0)
+            pixels[index_up] = (round(pixel_rgb_red * brightness), round(pixel_rgb_green * brightness), round(pixel_rgb_blue * brightness))
+            pixels[index_down] = (round(pixel_rgb_red * brightness), round(pixel_rgb_green * brightness), round(pixel_rgb_blue * brightness))
 
         if (current_time_delta > out_beat_time):
             start_time = time.clock_gettime(time.CLOCK_BOOTTIME)

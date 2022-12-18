@@ -22,9 +22,9 @@ pixels = neopixel.NeoPixel(
 pixels.fill(0)
 pixels.show()
 
-pixel_rgb_red = 255
-pixel_rgb_green = 85
-pixel_rgb_blue = 0
+pixel_rgb_red = 13
+pixel_rgb_green = 9
+pixel_rgb_blue = 230
 
 def normal_index(i):
     return i % num_pixels
