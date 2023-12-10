@@ -1,4 +1,11 @@
 from string import Template
+import os
+import sys
+script_path = os.path.dirname(os.path.abspath(sys.argv[0]))
+install_dir = os.path.join(script_path, '../..')
+tmp_dir = os.path.join(script_path, 'tmp')
+os.makedirs(tmp_dir, exist_ok=True)
+print(f"Installation directory: {install_dir}")
 
 unit_template = Template('''
 [Unit]
@@ -11,13 +18,12 @@ Type=simple
 Restart=no
 User=root
 Group=root
-ExecStart=/usr/bin/python3 $installdir/src/animation/$bin.py
+ExecStart=/usr/bin/python3 $install_dir/src/animation/$bin.py
 
 [Install]
 WantedBy=multi-user.target
 ''')
 
-installdir = "/home/pi/rebar-heart"
 animations = ["heartbeat", "heartbeat-orange", "heartbeat-blue", "pendulum", "pendulum-orange", "pendulum-blue", "rainbow", "twinkle", "all-off", "random-animation"]
 conflicts = " ".join(f'heart-{i}.service' for i in animations)
 
@@ -27,5 +33,5 @@ for a in animations:
     c = conflicts.replace(servicefile, '')
     c = c.replace('  ', ' ')
     f.write(unit_template.substitute(
-        installdir=installdir, bin=a, conflicts=c))
+        install_dir=install_dir, bin=a, conflicts=c))
     f.close()
