@@ -2,7 +2,7 @@
 
 These Python scripts follow a simple pattern, mostly based on example code:
 
-1. Configure the details of the NeoPixel strip. 
+1. Configure the details of the NeoPixel strip.
 
 ```
 pixels = neopixel.NeoPixel(
@@ -11,6 +11,7 @@ pixels = neopixel.NeoPixel(
 pixels.fill(0)
 pixels.show()
 ```
+
 2. Set up an exit handler to turn the strip off when the program exits.
 
 ```
@@ -41,10 +42,10 @@ while True:
 
 ## Choosing a random animation
 
-`random-animation.py` assumes that any `.py` files in the same directory are animations, and it picks one at random to run. 
+`random-animation.py` assumes that any `.py` files in the same directory are animations, and it picks one at random to run.
 
 ## Running as `root`
 
-Because the programs manipulate the hardware, they must be run as the `root` superuser. 
+Because the programs manipulate the hardware, they must be run as the `root` superuser.
 
-Make sure you trust any code that you incorporate into a program like this, as it has full control of the Pi. 
+Make sure you trust any code that you incorporate into a program like this, as it has full control of the Pi.
