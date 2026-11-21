@@ -1,13 +1,14 @@
-import time
+import atexit
+import collections
 import math
+import os
+import random
+import signal
+import time
+
+import adafruit_fancyled.adafruit_fancyled as fancy
 import board
 import neopixel
-import random
-import collections
-import adafruit_fancyled.adafruit_fancyled as fancy
-import atexit
-import signal
-import os
 
 # Heart strip configuration
 num_pixels = 177
@@ -92,13 +93,12 @@ while True:
     if dir != last_dir:
         # we changed direction
         tail_hue = random.uniform(0, 1)
-        if dir == "edge":
-            if secs > start_secs + change_secs:
-                start_secs = secs
-                amplitude = random.randrange(amplitude_min, amplitude_max)
-                period = random.uniform(period_min, period_max)
-                lastvals.clear()
-                lastvals.append(val)
+        if dir == "edge" and secs > start_secs + change_secs:
+            start_secs = secs
+            amplitude = random.randrange(amplitude_min, amplitude_max)
+            period = random.uniform(period_min, period_max)
+            lastvals.clear()
+            lastvals.append(val)
 
     # same direction
     first_px = val

@@ -27,7 +27,7 @@ One symptom of failing to do this is that only a few pixels will light up near t
 
 Follow the instructions at <https://github.com/cli/cli/blob/trunk/docs/install_linux.md> to install `gh`:
 
-```
+```sh
 type -p curl >/dev/null || (sudo apt update && sudo apt install curl -y)
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
 && sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -38,27 +38,27 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 
 Then check out the repo:
 
-```
+```sh
 gh auth login
 gh repo clone jasonluther/rebar-heart
 ```
 
 Finally, install the dependencies and systemd scripts:
 
-```
+```sh
 cd rebar-heart/src/orchestration/
 ./install-systemd-files
 ```
 
 Start an animation:
 
-```
+```sh
 sudo service heart-rainbow start
 ```
 
 To troubleshoot, see logs here:
 
-```
+```sh
 tail -f /var/log/daemon.log
 ```
 

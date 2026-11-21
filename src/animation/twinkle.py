@@ -1,12 +1,13 @@
-import time
+import atexit
 import math
+import os
+import random
+import signal
+import time
+
+import adafruit_fancyled.adafruit_fancyled as fancy
 import board
 import neopixel
-import random
-import adafruit_fancyled.adafruit_fancyled as fancy
-import atexit
-import signal
-import os
 
 # Heart strip configuration
 num_pixels = 177
