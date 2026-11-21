@@ -4,41 +4,41 @@ These Python scripts follow a simple pattern, mostly based on example code:
 
 1. Configure the details of the NeoPixel strip.
 
-```
-pixels = neopixel.NeoPixel(
-    pixel_pin, num_pixels, brightness=brightness, auto_write=False, pixel_order=ORDER
-)
-pixels.fill(0)
-pixels.show()
-```
+   ```python
+   pixels = neopixel.NeoPixel(
+       pixel_pin, num_pixels, brightness=brightness, auto_write=False, pixel_order=ORDER
+   )
+   pixels.fill(0)
+   pixels.show()
+   ```
 
 2. Set up an exit handler to turn the strip off when the program exits.
 
-```
-def exit_handler():
-    pixels.fill(0)
-    pixels.show()
+   ```python
+   def exit_handler():
+       pixels.fill(0)
+       pixels.show()
 
 
-atexit.register(exit_handler)
+   atexit.register(exit_handler)
 
 
-def sigterm_handler(signum, frame):
-    exit_handler()
-    os._exit(0)
+   def sigterm_handler(signum, frame):
+       exit_handler()
+       os._exit(0)
 
 
-signal.signal(signal.SIGTERM, sigterm_handler)
-```
+   signal.signal(signal.SIGTERM, sigterm_handler)
+   ```
 
 3. Set `pixels` values, sleep, repeat.
 
-```
-while True:
-    # Do the animation stuff...
-    pixels.show()
-    time.sleep(0.01)
-```
+   ```python
+   while True:
+       # Do the animation stuff...
+       pixels.show()
+       time.sleep(0.01)
+   ```
 
 ## Choosing a random animation
 

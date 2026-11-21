@@ -1,6 +1,6 @@
-from string import Template
 import os
 import sys
+from string import Template
 
 script_path = os.path.dirname(os.path.abspath(sys.argv[0]))
 install_dir = os.path.join(script_path, "../..")
@@ -41,8 +41,7 @@ conflicts = " ".join(f"heart-{i}.service" for i in animations)
 
 for a in animations:
     servicefile = f"heart-{a}.service"
-    f = open(f"tmp/{servicefile}", "w")
     c = conflicts.replace(servicefile, "")
     c = c.replace("  ", " ")
-    f.write(unit_template.substitute(install_dir=install_dir, bin=a, conflicts=c))
-    f.close()
+    with open(f"tmp/{servicefile}", "w") as f:
+        f.write(unit_template.substitute(install_dir=install_dir, bin=a, conflicts=c))

@@ -1,7 +1,7 @@
-import os
 import glob
-import secrets
+import os
 import runpy
+import secrets
 
 script = os.path.realpath(__file__)
 os.chdir(os.path.dirname(script))

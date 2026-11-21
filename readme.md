@@ -139,7 +139,7 @@ The addressable LEDs in the strip require signals with precise timing, so the tw
 
 The [Adafruit CircuitPython NeoPixel library](https://learn.adafruit.com/neopixels-on-raspberry-pi) makes it possible to use a Raspberry Pi. I chose the Zero W model because it is much easier than a microcontroller to program and operate remotely, and it's about the same cost as an Arduino-style microcontroller board.
 
-Refer to https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring for details on the wiring. The strip requires a 5V data signal, but the Raspberry Pi operates at 3.3V, so I used a [Sparkfun level shifter](https://www.sparkfun.com/products/12009).
+Refer to <https://learn.adafruit.com/neopixels-on-raspberry-pi/raspberry-pi-wiring> for details on the wiring. The strip requires a 5V data signal, but the Raspberry Pi operates at 3.3V, so I used a [Sparkfun level shifter](https://www.sparkfun.com/products/12009).
 
 The 5V supply also provides power to the Raspberry Pi. To save space, I wired the power directly to the GPIO pins on the Pi instead of powering it through a USB cable and separate power supply. This method bypasses some of the safety circuitry, increasing the likelihood that you will destroy the Pi. To avoid damage from voltage spikes, I used a 25V 1000µF capacitor across the 5V and ground wires.
 
