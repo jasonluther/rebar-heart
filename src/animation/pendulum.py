@@ -44,7 +44,7 @@ period_min = 1
 period_max = 10
 amplitude = 80
 amplitude_min = 70
-amplitude_max = round(num_pixels/2 - 1)
+amplitude_max = round(num_pixels / 2 - 1)
 change_secs = 120
 tail = 10
 lastvals = collections.deque([0], tail)
@@ -70,30 +70,30 @@ signal.signal(signal.SIGTERM, sigterm_handler)
 
 while True:
     secs = time.clock_gettime(time.CLOCK_MONOTONIC)
-    val = round(math.cos(2*math.pi * secs/period) * amplitude)
+    val = round(math.cos(2 * math.pi * secs / period) * amplitude)
     lastvals.appendleft(val)
 
     pixels.fill(0)
 
     last_dir = dir
-    if (abs(val) == amplitude):
+    if abs(val) == amplitude:
         dir = "edge"
-    elif (val > lastvals[1]):
+    elif val > lastvals[1]:
         if val <= 0:
             dir = "right_down"
         else:
             dir = "left_up"
-    elif (val < lastvals[1]):
+    elif val < lastvals[1]:
         if val <= 0:
             dir = "right_up"
         else:
             dir = "left_down"
 
-    if (dir != last_dir):
+    if dir != last_dir:
         # we changed direction
         tail_hue = random.uniform(0, 1)
-        if (dir == "edge"):
-            if (secs > start_secs + change_secs):
+        if dir == "edge":
+            if secs > start_secs + change_secs:
                 start_secs = secs
                 amplitude = random.randrange(amplitude_min, amplitude_max)
                 period = random.uniform(period_min, period_max)
@@ -105,16 +105,15 @@ while True:
     last_px = lastvals[-1]
 
     valdelta = abs(first_px - last_px)
-    if (first_px > last_px):
+    if first_px > last_px:
         step = -1
     else:
         step = 1
     tail_val = 1.0
     tail_sat = 1.0
     for v in range(first_px, last_px, step):
-        tail_val = 1-((abs(first_px - v))/(valdelta))
-        pixels[normal_index(v)] = fancy.CHSV(
-            tail_hue, tail_sat, tail_val).pack()
+        tail_val = 1 - ((abs(first_px - v)) / (valdelta))
+        pixels[normal_index(v)] = fancy.CHSV(tail_hue, tail_sat, tail_val).pack()
         tail_val = tail_val / 2.0
         tail_sat -= tail_sat * 0.02
 

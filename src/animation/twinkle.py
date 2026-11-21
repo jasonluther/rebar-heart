@@ -98,7 +98,7 @@ signal.signal(signal.SIGTERM, sigterm_handler)
 
 while True:
     secs = time.clock_gettime(time.CLOCK_MONOTONIC)
-    val = math.sin(2*math.pi * secs/period) * amplitude + num_pixels
+    val = math.sin(2 * math.pi * secs / period) * amplitude + num_pixels
     random_update(round(val))
     darken()
     write_hsv_to_pixels()
